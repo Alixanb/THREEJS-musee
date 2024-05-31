@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mon application Three.js</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      .info-bulle {
+        position: absolute;
+        background-color: white;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        border: 1px solid black;
+        padding: 8px 16px;
+        border-radius: 8px;
+      }
+
+      .info-bulle::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          height: 3px;
+          width: 100%;
+          left: 0;
+          background-color: rgb(100, 42, 207);
+          animation: reduceWidth 500ms forwards; /* Utilisation de l'animation */
+      }
+
+      @keyframes reduceWidth {
+          from {
+              width: 100%; /* Commence à 100% */
+          }
+          to {
+              width: 0; /* Se termine à 0 */
+          }
+      }
+    </style>
+  </head>
+  <body>
+  <body>
+	<script type="importmap">
+	  {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+        "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+      }
+	  }
+	</script>
+  <div id="container" style="width:100vw; height:100vh;"></div>
+  <script type="module" src="./js/main.js">
+  </script>
+  </body>
+</html>
